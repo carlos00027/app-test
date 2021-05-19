@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 class Peliculas {
   List<Pelicula> items = new List();
   Peliculas();
@@ -17,12 +15,14 @@ class Pelicula {
   int id;
   bool video;
   double voteAverage;
+  String title;
 
-  Pelicula({this.voteCount, this.id, this.video, this.voteAverage});
+  Pelicula({this.title, this.voteCount, this.id, this.video, this.voteAverage});
 
   Pelicula.fromJsonMap(Map<String, dynamic> json) {
     voteCount = json['vote_count'];
     id = json['id'];
+    title = json['title'];
     video = json['video'];
     voteAverage = json['vote_average'] / 1;
   }
